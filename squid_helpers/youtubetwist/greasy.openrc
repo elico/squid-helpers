@@ -1,0 +1,29 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+
+BIN="/opt/greasyspoon-release-1.0.8/greasyspoon"
+depend() {
+	provide icap
+
+}
+
+start() {
+$BIN start  
+}
+
+stop() {
+$BIN stop   
+
+}
+
+restart() {
+$BIN stop  
+echo "..."
+sleep 3
+$BIN start 
+
+
+}

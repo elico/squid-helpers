@@ -1,0 +1,76 @@
+WHAT IN THIS FOLDER
+=
+* 2 squid instances config sample files
+* 2 GreasySpoon REQMOD scripts in java
+* 1 startup script for squid in any version (not very clean)
+* 1 openrc scripts that calles the startup script
+* 1 openrc script to start GreasySpoon ICAP server
+* 1 mysql structure file with user (edit the file as you wish and run as root)
+
+Things that you need to think of:
+-
+you can run two instances of squid from the same exact binay file like this:
+/usr/local/bin/squid -f /etc/squid/squid1.conf
+/usr/local/bin/squid -f /etc/squid/squid2.conf
+
+to control the instance add any command to the line like this:
+/usr/local/bin/squid -f /etc/squid/squid2.conf -k reconfigure
+
+based on the above are the startup scripts of squid in this folder.
+
+GreasySpoon is based on java so you need to have it installed.
+dont be afraid of GreasySpoon java exceptions output in terminal\stderr because it has some that are not really related to any problem.
+
+if you create a an internal domain such as youtube.squid.internal it dosnt mean that you must have it but it's better to have it running on testing so you can get debug data.
+in a case of TPROXY setup you must use some real ip that is routable througth the chained proxy for this domain... in the first squid hosts file.
+
+the GreasySpoon scripts are based on an squid server called "sql1" change the ip as you wish.
+also use any user and password you want for the sql server.
+
+as for the scripts that runs the sqlQuery in the java methods they run the next sql procedures:
+(read a bit on it)
+
+CREATE PROCEDURE `seturl`(
+IN vid varchar(4000),
+IN uri varchar(4000)
+)
+BEGIN
+ REPLACE INTO `temp`
+ (videoId, url) values 
+ (vid,uri);
+END
+
+CREATE PROCEDURE `geturl`(
+IN _id VARCHAR(2000) )
+BEGIN
+SELECT url FROM temp WHERE videoId = _id ;
+END
+
+
+Installation
+-
+install mysql + squid + jre on the machine
+create a db based on the sql file(understand it first).
+download GreasySpoon and java jdbc connector.
+put jdbc connector in the ./lib/ directory for the scripts to use it.
+change the startup script that comes with greasyspoon and fix the jre location.
+login into greasyspoon interface and change admin password!!!
+install the java reqmod scripts into greasyspoon.
+config 2 squid instances. 
+(you can use the my  proxy_hb_check helper to check that state of a proxy and an acl that will let squid serv the content in a case that the second proxy is down or not server right the content).
+##important thing is to firewall GreasySpoon ICAP port (1344) because it has no other way to block access into the service in any level.
+
+GreasySpoon has a nice testing tool that runs every time you save a script in the web interface and you can see the debug and service logs for it to perform well.
+it takes about couple of seconds for GreasySpoon to fully load so dont panice.
+
+
+
+URLS needed for the project
+-
+[Squid-Cache proxy source](http://www.squid-cache.org/Versions/)
+
+[GreasySpoon ICAP server HomePage ](http://greasyspoon.sourceforge.net/)
+
+[Java mysql connector](http://dev.mysql.com/downloads/connector/j/)
+
+[or other site without registration  for mysql connector](http://download.softagency.net/MySQL/Downloads/Connector-J/mysql-connector-java-5.1.20.tar.gz)

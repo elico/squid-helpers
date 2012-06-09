@@ -1,0 +1,30 @@
+icp_client
+==========
+icp_client.rb is based on:          
+
+Internet Cache Protocol (ICP), version 2
+http://tools.ietf.org/html/rfc2186 
+
+and
+        
+Application of Internet Cache Protocol (ICP), version 2
+http://tools.ietf.org/html/rfc2187
+
+the only missing part for this tool is the ICP Option Flags
+that can be flaged with ICP_QUERY
+
+ICP_FLAG_HIT_OBJ 0x80000000  
+ICP_FLAG_SRC_RTT 0x40000000  
+
+they are being flagged in the the fifth part of the packet called options:
+it starts on the 64 bit and ends in the 95 bit.
+
+as for now there is'nt really good use for these flags and because the are
+missing some age parameters i prefer to let the http layer to handle the cache fetching.
+
+
+Eliezer
+
+
+
+

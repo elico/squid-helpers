@@ -1,0 +1,27 @@
+#!/sbin/runscript
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+ 	#need net
+        use logger
+	provide cache
+
+}
+
+start() {
+/etc/squid/init2 start
+}
+
+stop() {
+/etc/squid/init2 stop
+}
+
+restart() {
+/etc/squid/init2 restart
+}
+status() {
+/etc/squid/init2 status
+}
+
