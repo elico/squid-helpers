@@ -1,7 +1,10 @@
 #!/usr/bin/perl
-# ISI DARI STORE-ID DIBAWAH INI DARI SHUDY
-# SHUDYLAH BERBAGI ILMU :3
-# ucok_karnadi(at)yahoo.com or https://twitter.com/syaifuddin_jw
+# Improved\Converted StoreID helper based on perl and not on ruby
+# this helper dosn't have my logic about youtube and other StoreID
+# but it still do the trick in most cases and for my understanding.
+# if you do want to understand the script logic rather then just 
+# use it try to look at: http://www1.ngtech.co.il/paste/1016/
+# Eliezer Croitoru eliezer<at>ngtech.co.il
 
 $|=1;
 while (<>) {
