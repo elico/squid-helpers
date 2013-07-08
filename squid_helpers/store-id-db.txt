@@ -1,0 +1,3 @@
+    ^http:\/\/[^\.]+\.dl\.sourceforge\.net\/(.*)        sub { "http://dl.sourceforge.net.squid.internal/$1" }
+    ^http:\/\/[1-4]\.bp\.(blogspot\.com)\/      sub { "http://blog-cdn$1" }
+    ^http:\/\/[^\.]+\.c\.youtube\.com\/videoplayback\?.*?id=([^&]+)&.*?itag=([^&]+)&.*?range=([^&]+).*      sub { "http://video-srv.youtube.com.squid.internal/$1&$2&$3" }
