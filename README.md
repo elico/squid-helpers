@@ -35,8 +35,11 @@ more detaild explanation and history on the process here:
 [squid-users mailing list post on the topic](http://squid-web-proxy-cache.1019090.n4.nabble.com/Youtube-dynamic-content-caching-with-squid-3-2-DONE-td4655311.html)
 how to implement and needed scripts are in /squid-helpers/youtubetwist
 
+NEW StoreID perl helper that helps cache youtube videos.
+-------------
+http://wiki.squid-cache.org/Features/StoreID
 
-i also have store_url_rewrite for squi2.7 that ment to help store youtube videos in cache.
+I also have store_url_rewrite for squid2.7 that ment to help store youtube videos in cache.
 
 there are samples for codes that other people wrote.
 
