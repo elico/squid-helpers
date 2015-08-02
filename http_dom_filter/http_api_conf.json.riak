@@ -1,0 +1,4 @@
+{
+    "ApiHttpUrl": "http://filterdb:8098/buckets/blocked/keys/",
+    "Debug": "No"
+}
