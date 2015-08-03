@@ -1,0 +1,9 @@
+{
+    "HttpPort": "80",
+    "DbUser": "filtering",
+    "DbPass": "filtering",
+    "DbHost": "127.0.0.1",
+    "DbPort": "",
+    "DbName": "filtering",
+    "Debug": "No"
+} 
