@@ -43,6 +43,9 @@ I also have store_url_rewrite for squid2.7 that ment to help store youtube video
 
 there are samples for codes that other people wrote.
 
+  Caching youtube videos using this above method will not work since Google have changed their static way of publishing videos.
+If you want more details on the subject contact me via my private email eliezer@ngtech.co.il or via squid user mailing list at:squid-users@lists.squid-cache.org
+
 proxy_hb_check
 --------------
 two scripts:
